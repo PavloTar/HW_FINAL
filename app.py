@@ -47,7 +47,7 @@ elif model_option == "Модель на основі VGG16":
 @st.cache_resource
 def load_model(url):
     output = 'model.h5'
-    gdown.download(url, output, quiet=False)
+    gdown.download(url, output, quiet=False, fuzzy=True)
     model = tf.keras.models.load_model(output)
     return model
     
